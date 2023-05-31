@@ -14,7 +14,7 @@ spec:
         app: rails-tutorial
     spec:
       containers:
-      - image: registry.home.dynamis.bbrfkr.net/rails-tutorial
+      - image: TARGET_IMAGE
         name: rails-tutorial
         ports:
         - containerPort: 80
