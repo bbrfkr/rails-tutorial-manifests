@@ -1,58 +1,58 @@
 local params = import 'params.libsonnet';
 [
   {
-    "apiVersion": "apps/v1",
-    "kind": "Deployment",
-    "metadata": {
-      "name": params.name
+    apiVersion: 'apps/v1',
+    kind: 'Deployment',
+    metadata: {
+      name: params.name,
     },
-    "spec": {
-      "replicas": params.replicas,
-      "revisionHistoryLimit": params.revisionHistoryLimit,
-      "selector": {
-        "matchLabels": {
-          "app": params.name
-        }
-      },
-      "template": {
-        "metadata": {
-          "labels": {
-            "app": params.name
-          }
+    spec: {
+      replicas: params.replicas,
+      revisionHistoryLimit: params.revisionHistoryLimit,
+      selector: {
+        matchLabels: {
+          app: params.name,
         },
-        "spec": {
-          "containers": [
+      },
+      template: {
+        metadata: {
+          labels: {
+            app: params.name,
+          },
+        },
+        spec: {
+          containers: [
             {
-              "image": params.image,
-              "name": params.name,
-              "ports": [
+              image: params.image,
+              name: params.name,
+              ports: [
                 {
-                  "containerPort": params.containerPort
-                }
-              ]
-            }
-          ]
-        }
-      }
-    }
+                  containerPort: params.containerPort,
+                },
+              ],
+            },
+          ],
+        },
+      },
+    },
   },
   {
-    "apiVersion": "v1",
-    "kind": "Service",
-    "metadata": {
-      "name": params.name
+    apiVersion: 'v1',
+    kind: 'Service',
+    metadata: {
+      name: params.name,
     },
-    "spec": {
-      "type": params.serviceType,
-      "ports": [
+    spec: {
+      type: params.serviceType,
+      ports: [
         {
-          "port": params.servicePort,
-          "targetPort": params.containerPort
-        }
+          port: params.servicePort,
+          targetPort: params.containerPort,
+        },
       ],
-      "selector": {
-        "app": params.name
-      }
-    }
-  }
+      selector: {
+        app: params.name,
+      },
+    },
+  },
 ]
