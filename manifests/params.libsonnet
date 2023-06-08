@@ -1,6 +1,6 @@
 {
   containerPort: 8080,
-  image: 'registry.home.dynamis.bbrfkr.net/rails-tutorial:db0d5307a89da94ca9a73f850df0106828dea392',
+  image: 'registry.home.dynamis.bbrfkr.net/rails-tutorial:aeabc40be34e9e36b1416043ca49546851eed598',
   name: 'rails-tutorial',
   replicas: 1,
   revisionHistoryLimit: 3,
