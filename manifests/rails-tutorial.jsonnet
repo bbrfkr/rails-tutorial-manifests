@@ -30,6 +30,12 @@ local params = import 'params.libsonnet';
                   containerPort: params.containerPort,
                 },
               ],
+              env: [
+                {
+                  name: 'MONGODB_URL',
+                  value: params.mongodbUrl,
+                },
+              ],
             },
           ],
         },
