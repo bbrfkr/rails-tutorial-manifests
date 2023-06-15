@@ -32,8 +32,8 @@ local params = import 'params.libsonnet';
               ],
               env: [
                 {
-                  name: 'MONGODB_URL',
-                  value: params.mongodbUrl,
+                  name: 'MONGODB_URI',
+                  value: params.mongodbUri,
                 },
               ],
             },
